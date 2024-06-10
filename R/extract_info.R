@@ -19,3 +19,17 @@ extract_info.EMBEDDINGS <- function(object, ...) {
   }
   return(object$data$embedding[[1]])
 }
+
+
+#' Generic Method for COMPLETIONS
+#'
+#' @param object A COMPLETIONS object containing response of system
+#' @param ... Additional arguments (ignored)
+#' @return An character object
+#' @export
+extract_info.COMPLETIONS <- function(object, ...) {
+  if (!is.list(object)) {
+    stop("Invalid data structure in COMPLETIONS object")
+  }
+  return(object$choices$message$content[[1]])
+}

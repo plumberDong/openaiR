@@ -1,12 +1,11 @@
 #' reducing embedding dimensions
 #' @description
-#' embeddings can be shortened to a size of ndim while still outperforming an unshortened version!
+#' Embeddings can be shortened to a size of ndim while still outperforming an unshortened version!
 #' @param embeddings A vector, your embeddings
 #' @param ndim the number of dimensions you wanted.(default is 256)
 #'
 #' @return An unit vector.
 #' @export
-#'
 prune_embeddings <- function(embeddings, ndim = 256) {
   # Check if embeddings is a numeric vector
   if (!is.numeric(embeddings)) {
