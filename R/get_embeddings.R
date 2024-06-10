@@ -12,8 +12,6 @@
 #' @export
 #' @import httr2
 #' @importFrom jsonlite fromJSON
-#' @examples
-#' x <- get_embeddings("hello world!", api_key = "xxxx")
 get_embeddings <- function(input_text, api_key,
                            api_base_url = "https://api.openai.com/v1/embeddings",
                            model = "text-embedding-ada-002",
@@ -38,6 +36,6 @@ get_embeddings <- function(input_text, api_key,
   response <- req_perform(req)
   response <- resp_body_string(response) |> fromJSON()
 
-  return(response)
+  return(structure(response, class = "EMBEDDINGS"))
 }
 

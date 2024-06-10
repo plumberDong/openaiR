@@ -7,8 +7,6 @@
 #' @return An unit vector.
 #' @export
 #'
-#' @examples
-#' x <- prune_embeddings(embeddings = x, ndim = 256)
 prune_embeddings <- function(embeddings, ndim = 256) {
   # Check if embeddings is a numeric vector
   if (!is.numeric(embeddings)) {

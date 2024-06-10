@@ -29,6 +29,3 @@ A list object containing embeddings.
 \description{
 This function retrieves embeddings for a given text using the OpenAI API. It provides a simple interface for embedding text into a vector space, which can be useful for a variety of natural language processing tasks. For more details, see "https://platform.openai.com/docs/guides/embeddings."
 }
-\examples{
-x <- get_embeddings("hello world!", api_key = "xxxx")
-}

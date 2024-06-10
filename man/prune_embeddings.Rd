@@ -17,6 +17,3 @@ An unit vector.
 \description{
 embeddings can be shortened to a size of ndim while still outperforming an unshortened version!
 }
-\examples{
-x <- prune_embeddings(embeddings = x, ndim = 256)
-}
