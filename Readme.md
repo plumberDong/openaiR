@@ -5,7 +5,8 @@
 1. Chat Completion
 2. Fetch Embeddings
 
-The `openaiR` package simplifies the integration of OpenAI's powerful API into R workflows, making advanced natural language processing capabilities accessible to researchers and practitioners in the social sciences.
+The `openaiR` package simplifies the integration of OpenAI's powerful API into R workflows, making advanced natural language processing capabilities accessible to researchers and practitioners in the social sciences.Learn more in
+`vignette("openaiR")`
 
 
 ```r

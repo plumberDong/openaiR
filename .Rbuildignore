@@ -4,3 +4,5 @@
 Readme.RMD
 utils
 Readme.html
+^doc$
+^Meta$

@@ -1,10 +1,10 @@
 Package: openaiR
-Title: Fetch embeddings and completions from OpenAI API
+Title: Fetch information from OpenAI API
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
+    person("Plumber", "Dong", , "dong_shuhao@163.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: OpenAI Platform offers a range of models. These models can be easily used with the OpenAI Python package. However, detailed instructions on how to use them in R are not provided. The openaiR package offers a convenient way for social scientists to powerful APIs.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

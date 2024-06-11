@@ -5,7 +5,7 @@
 #' @param input_text The text to get embeddings for. Must be a character vector.
 #' @param api_key Your OpenAI API key.
 #' @param api_base_url The base URL for the API (default is "https://api.openai.com/v1/embeddings").
-#' @param model A model to use for embeddings (default is "text-embedding-ada-002").
+#' @param model A model to use for embeddings (default is "text-embedding-3-large").
 #' @param max_tries An integer specifying the maximum number of retry attempts for the API call. Defaults to 1.
 #' @return A list object containing embeddings.
 #' @export

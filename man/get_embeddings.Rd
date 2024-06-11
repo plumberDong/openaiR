@@ -19,7 +19,7 @@ get_embeddings(
 
 \item{api_base_url}{The base URL for the API (default is "https://api.openai.com/v1/embeddings").}
 
-\item{model}{A model to use for embeddings (default is "text-embedding-ada-002").}
+\item{model}{A model to use for embeddings (default is "text-embedding-3-large").}
 
 \item{max_tries}{An integer specifying the maximum number of retry attempts for the API call. Defaults to 1.}
 }
