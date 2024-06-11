@@ -16,8 +16,8 @@
 #' # x <- get_embeddings(input_text, api_key = "xxx", api_base_url = "xxx")
 
 get_embeddings <- function(input_text, api_key,
-                           api_base_url = "https://api.openai.com/v1/embeddings",
-                           model = "text-embedding-ada-002",
+                           api_base_url = "https://api.openai.com/v1",
+                           model = "text-embedding-3-large",
                            max_tries = 1){
 
   # API key validation
@@ -34,6 +34,9 @@ get_embeddings <- function(input_text, api_key,
   if (!is.character(input_text)) {
     stop("Input text must be a character vector.")
   }
+
+  # embeddings url
+  api_base_url <- paste0( api_base_url, "/embeddings")
 
   # get response
   req <- request(api_base_url) |>

@@ -5,3 +5,7 @@
 .DS_Store
 .quarto
 test.R
+utils
+inst/doc
+Readme.Rmd
+Readme.html

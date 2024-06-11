@@ -15,5 +15,5 @@ prune_embeddings(embeddings, ndim = 256)
 An unit vector.
 }
 \description{
-Embeddings can be shortened to a size of ndim while still outperforming an unshortened version!
+Embeddings can be shortened to a size of ndim while still outperforming an unshortened version.
 }

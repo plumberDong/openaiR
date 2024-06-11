@@ -1,6 +1,6 @@
 #' reducing embedding dimensions
 #' @description
-#' Embeddings can be shortened to a size of ndim while still outperforming an unshortened version!
+#' Embeddings can be shortened to a size of ndim while still outperforming an unshortened version.
 #' @param embeddings A vector, your embeddings
 #' @param ndim the number of dimensions you wanted.(default is 256)
 #'

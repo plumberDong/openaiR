@@ -2,26 +2,26 @@
 % Please edit documentation in R/get_embeddings.R
 \name{get_embeddings}
 \alias{get_embeddings}
-\title{get embeddings using openAI api}
+\title{Get embeddings using OpenAI API}
 \usage{
 get_embeddings(
   input_text,
   api_key,
-  api_base_url = "https://api.openai.com/v1/embeddings",
-  model = "text-embedding-ada-002",
+  api_base_url = "https://api.openai.com/v1",
+  model = "text-embedding-3-large",
   max_tries = 1
 )
 }
 \arguments{
-\item{input_text}{The text to get embeddings for.}
+\item{input_text}{The text to get embeddings for. Must be a character vector.}
 
 \item{api_key}{Your OpenAI API key.}
 
 \item{api_base_url}{The base URL for the API (default is "https://api.openai.com/v1/embeddings").}
 
-\item{model}{A model to use for embeddings (default is "text-embedding-ada-002")}
+\item{model}{A model to use for embeddings (default is "text-embedding-ada-002").}
 
-\item{max_tries}{Automatically retry if the request fails.}
+\item{max_tries}{An integer specifying the maximum number of retry attempts for the API call. Defaults to 1.}
 }
 \value{
 A list object containing embeddings.

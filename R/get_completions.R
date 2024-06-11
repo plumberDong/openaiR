@@ -14,21 +14,24 @@
 #'
 #' @examples
 #' # Example(Not run)
+#' # Text
 #' # x <- get_embeddings("I Love you", api_key = "xxx", api_base_url = "xxx")
-#' #. api_base_url3 = "https://api.xty.app/v1/chat/completions"
+#' #
+#' # List
 #' # message = list(
 #' # list(
 #' #   role = "system",
-#' #   content = "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."
+#' #   content = "You are a poetic assistant"
 #' # ),
 #' # list(
 #' #   role = "user",
-#' #  content = "Compose a poem that explains the concept of recursion in programming."
+#' #  content = "Compose a poem."
 #' #  )
 #' #)
+#' # x <- get_embeddings(message, api_key = "xxx", api_base_url = "xxx")
 get_completions <- function(prompt,
                             api_key,
-                            api_base_url = "https://api.openai.com/v1/chat/completions",
+                            api_base_url = "https://api.openai.com/v1",
                             model = "gpt-3.5-turbo",
                             max_tries = 1, ...){
 
@@ -48,6 +51,9 @@ get_completions <- function(prompt,
       list(role = "user", content = prompt)
     )
   }
+
+  # base_url
+  api_base_url <- paste0(api_base_url , "/chat/completions")
 
   # Convert ... to list
   extra_params <- list(...)
