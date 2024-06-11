@@ -1,13 +1,3 @@
----
-title: "README"
-output: 
-  html_document: 
-    keep_md: true
-date: "2024-06-10"
----
-
-
-
 # openaiR <img src="man/figures/openaiR.png" align="right" alt="" width="120" />
 
 [OpenAI Platform](https://platform.openai.com/docs/introduction) offers a range of models. These models can be easily used with the OpenAI Python package. However, detailed instructions on how to use them in R are not provided. The `openaiR` package offers a convenient way for social scientists to use two of the most useful APIs:
