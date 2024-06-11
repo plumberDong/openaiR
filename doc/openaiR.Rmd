@@ -1,0 +1,103 @@
+---
+title: "openaiR"
+output:
+  rmarkdown::html_vignette:
+    number_sections: no
+    toc: yes
+author: "[PlumberDong](https://github.com/plumberDong)"
+date: "`r Sys.Date()`"
+vignette: >
+  %\VignetteIndexEntry{openaiR}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Prerequisites
+
+You need an OpenAI API key obtained from OpenAI **OR** an API key and endpoint provided by another intermediary platform.
+
+```
+#--------------
+# OpenAI API key
+#--------------
+#api_key <-  "sk-xxxxx"
+
+#-------------------------
+# API key and endpoint
+#-------------------------
+#api_key <- "sk-xxxxx"
+#api_base_url2 <- "https://api.xxx.xxx/v1"
+```
+
+# Completions
+
+The prompt can be a single text:
+
+```{r eval=FALSE}
+x <- get_completions("I love you!", 
+                     api_key = api_key, 
+                     api_base_url = api_base_url) # if your OpenAI API key is obtained from OpenAI, just leave api_base_url parameter default
+str(x)
+```
+
+The prompt can also be a list:
+
+```{r eval=FALSE}
+prompt = list(
+  list(
+    role = "system",
+    content = "You are a poetic assistant, skilled in explaining complex programming concepts with creative flair."
+  ),
+  list(
+    role = "user",
+    content = "Compose a poem that explains the concept of recursion in programming."
+  )
+)
+
+x <- get_completions(prompt, 
+                     api_key = api_key, 
+                     api_base_url = api_base_url)
+str(x)
+```
+
+The response is a list with a complex structure, but sometimes we may only need the message it returns. We can use `extract_info` to simplify the received response:
+
+```{r eval=FALSE}
+extract_info(x)
+```
+
+
+# Embeddings
+
+The input_text should be a single text:
+
+```{r eval=FALSE}
+x <- get_embeddings(input_text = "I LOVE YOU, openaiR！",
+                    api_key = api_key,
+                    api_base_url = api_base_url)
+str(x)
+```
+
+If we only need the embeddings it returns, we can use `extract_info` to simplify it:
+
+```{r eval=FALSE}
+res <- extract_info(x)
+str(res)
+```
+
+As we can see, the default model "text-embedding-3-large" returns a vector with 3072 dimensions! Storing or analyzing such a long vector can be challenging, especially when dealing with many pieces of text. In certain cases, you may need to change the embedding dimensions after generating them.
+
+According to [OpenAI](https://platform.openai.com/docs/guides/embeddings/use-cases), the new embedding models were trained with a technique that allows developers to shorten embeddings without losing their concept-representing properties. The openaiR package adopts their methods and integrates the whole process into the `prune_embeddings` function:
+
+```{r eval=FALSE}
+prune_res <- prune_embeddings(embeddings = res, 
+                              #n dim: the number of dimensions you wanted.
+                              ndim = 256)
+str(prune_res)
